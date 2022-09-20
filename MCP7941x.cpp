@@ -243,3 +243,11 @@ byte MCP7941x::getSramByte ( byte location )
   }
 }
 
+// Disable the external oscillator:
+void MCP7941x::disableExternalOscillator()
+{
+  Wire.beginTransmission(MCP7941x_RTC_I2C_ADDR);
+  WireSend(RTC_LOCATION + 0x07);
+  WireSend(0x80);
+  Wire.endTransmission();
+}
