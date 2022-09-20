@@ -40,6 +40,7 @@
       void enableClock ();
       void disableClock ();
       void enableBattery ();
+      void disableExternalOscillator ();
 
       void setSramByte ( byte location, byte data );
       byte getSramByte ( byte location );
